@@ -1,20 +1,24 @@
-/tracking/verbose 0
-/gun/number 10
-/g4cmp/voltage 0.01 volt
-
-/g4cmp/producePhonons 0.
-/g4cmp/sampleLuke 0.
-
+/tracking/verbose 1
+/gun/number 3000
+/g4cmp/voltage 0.000000000000001 volt
+#/g4cmp/IVRateModel Quadratic
+/g4cmp/producePhonons 0
+/g4cmp/sampleLuke 0
 /run/initialize
-/vis/open OGL
-/vis/viewer/set/upVector 1 0 0
-/vis/viewer/set/viewpointVector 1 0 1
-/vis/viewer/zoomTo 2
-/vis/drawVolume
-/vis/scene/add/trajectories
-# /vis/scene/add/hits
-/run/beamOn 1
-/vis/ogl/set/printFilename g4cmpCharge
-/vis/ogl/set/printMode pixmap
-/vis/ogl/printEPS
-/vis/viewer/clear
+/process/setVerbose 1 G4CMPInterValleyScattering
+/process/setVerbose 0 G4CMPLukeScattering
+/process/setVerbose 0 G4CMPTimeStepper
+
+
+#/vis/open OGL
+#/vis/viewer/set/upVector 1 0 0
+#/vis/viewer/set/viewpointVector 1 0 1
+#/vis/viewer/zoomTo 2
+#/vis/drawVolume
+#/vis/scene/add/trajectories
+#/vis/scene/add/hits
+/run/beamOn 100
+#/vis/ogl/set/printFilename g4cmpCharge
+#/vis/ogl/set/printMode pixmap
+#/vis/ogl/printEPS
+#/vis/viewer/clear
